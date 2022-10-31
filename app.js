@@ -54,9 +54,9 @@ var addTask = function() {
 var editTask = function() {
   var listItem = this.parentNode;
 
-  var editInput = listItem.querySelector("input[type=text]");
-  var label = listItem.querySelector("label");
-  var editBtn = listItem.querySelector(".edit");
+  var editInput = listItem.querySelector(".task-row-input");
+  var label = listItem.querySelector(".task-row-label");
+  var editBtn = listItem.querySelector(".btn.edit");
   var containsClass = listItem.classList.contains("edit-mode");
 
   //If class of the parent is .edit-mode
@@ -100,15 +100,15 @@ addButton.addEventListener("click", addTask);
 
 const bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   taskListItem
-    .querySelector("input[type=checkbox]")
+    .querySelector(".task-state")
     .addEventListener('change', checkBoxEventHandler);
 
   taskListItem
-    .querySelector("button.edit")
+    .querySelector(".btn.edit")
     .addEventListener('click', editTask);
 
   taskListItem
-    .querySelector("button.delete")
+    .querySelector(".btn.delete")
     .addEventListener('click', deleteTask);
 }
 
